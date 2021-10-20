@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 
 /**
  * @author  Nick Hartmann   m29176
@@ -29,7 +30,7 @@ public class PaintAreaController implements MouseListener {
 
     /**
      * This method starts when the MouseListener recognizes a doubleclick of the mous.
-     * For the first doubleclick a circle is drawn around the center, as is for the second
+     * For the first doubleclick a rectangle is drawn around the center, as is for the second
      * doubleclick. The third doubleclick resets the canvas.
      */
     @Override
@@ -38,7 +39,7 @@ public class PaintAreaController implements MouseListener {
         comp = (Canvas) e.getSource();
         Graphics g = comp.getGraphics();
         Graphics2D g2 = (Graphics2D) g;
-        Ellipse2D ellipse2D;
+        Rectangle2D rectangle2D;
 
         g2.setColor(Color.RED);
         g2.setStroke(new BasicStroke(6));
@@ -49,10 +50,10 @@ public class PaintAreaController implements MouseListener {
                 case 0:
                     x1 = e.getX();
                     y1 = e.getY();
-                    ellipse2D = new Ellipse2D.Float(
+                    rectangle2D = new Rectangle2D.Float(
                             x1, y1,
                             (float)rad,(float)rad);
-                    g2.draw(ellipse2D);
+                    g2.draw(rectangle2D);
 
                     count++;
                     break;
@@ -60,10 +61,10 @@ public class PaintAreaController implements MouseListener {
                 case 1:
                     x2 = e.getX();
                     y2 = e.getY();
-                    ellipse2D = new Ellipse2D.Float(
+                    rectangle2D = new Rectangle2D.Float(
                             x2, y2,
                             (float)rad,(float)rad);
-                    g2.draw(ellipse2D);
+                    g2.draw(rectangle2D);
 
                     count++;
                     break;
