@@ -27,6 +27,12 @@ public class PaintAreaController implements MouseListener {
     Canvas comp;            // Canvas object
 
 
+    public int getRadius(int r){
+        rad = r;
+        return rad;
+    }
+
+
     /**
      * This method starts when the MouseListener recognizes a doubleclick of the mous.
      * For the first doubleclick a circle is drawn around the center, as is for the second

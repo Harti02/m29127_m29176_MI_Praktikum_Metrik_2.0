@@ -7,16 +7,26 @@ import java.awt.event.ActionListener;
 
 public class MenuArea  {
 
+    int rad;
     /**
      * Constructor of the MenuArea-class, MenuBar and its functions are initialized here
      * @param cpa instance of PaintArea
      * @return mb instance of MenuBar
      */
-    public MenuBar MenuArea(PaintArea cpa){
+    public MenuBar MenuArea(PaintArea cpa, PaintAreaController pac){
         MenuBar mb = new MenuBar();
         Menu menu = new Menu("Menu");
         Menu submenu = new Menu("Backgroundcolor");
-
+        Menu submenu2 = new Menu("circular radius");
+        MenuItem radius = new MenuItem("set Radius");
+        submenu2.add(radius);
+        radius.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                rad = Integer.parseInt(JOptionPane.showInputDialog("Please input radius",50));
+                pac.getRadius(rad);
+            }
+        });
 
         MenuItem i1 = new MenuItem("White");
         i1.addActionListener(new ActionListener() {
@@ -69,6 +79,7 @@ public class MenuArea  {
         submenu.add(i6);
 
         menu.add(submenu);
+        menu.add(submenu2);
         mb.add(menu);
 
         return mb;

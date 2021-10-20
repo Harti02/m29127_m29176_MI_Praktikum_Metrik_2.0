@@ -22,13 +22,13 @@ public class MainFrame extends Frame {
      * Constructor of the MainFrame-class
      */
     public MainFrame()  {
-        setTitle("MainFrame V 1.1.0");
+        setTitle("MainFrame V 1.2");
         setSize(1000,800);
         setVisible(true);
         addWindowListener(mfc);
 
         add(paintArea);
         paintArea.addMouseListener(pac);
-        setMenuBar(menuArea.MenuArea(paintArea));
+        setMenuBar(menuArea.MenuArea(paintArea, pac));
     }
 }
