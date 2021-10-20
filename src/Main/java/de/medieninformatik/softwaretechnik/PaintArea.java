@@ -26,4 +26,8 @@ public class PaintArea extends Canvas  {
     public void paint(Graphics g) {
 
     }
+
+    public void changeBGC (Color c) {
+        setBackground(c);
+    }
 }
