@@ -40,6 +40,9 @@ public class PaintAreaController implements MouseListener {
         Graphics2D g2 = (Graphics2D) g;
         Ellipse2D ellipse2D;
 
+        Font f = new Font("Arial", Font.BOLD, 15);            // only for the string output
+        g2.setFont(f);
+
         g2.setColor(Color.RED);
         g2.setStroke(new BasicStroke(6));
 
@@ -49,10 +52,15 @@ public class PaintAreaController implements MouseListener {
                 case 0:
                     x1 = e.getX();
                     y1 = e.getY();
+                    String string1 = "X Coordi: " + e.getX() + "   &   Y Coordi: " + e.getY();
                     ellipse2D = new Ellipse2D.Float(
                             x1, y1,
                             (float)rad,(float)rad);
                     g2.draw(ellipse2D);
+
+
+                    g2.setColor(Color.BLACK);
+                    g2.drawString(string1, x1 - rad, y1 - rad/2);
 
                     count++;
                     break;
@@ -60,10 +68,14 @@ public class PaintAreaController implements MouseListener {
                 case 1:
                     x2 = e.getX();
                     y2 = e.getY();
+                    String string2 = "X Coordi: " + e.getX() + "   &   Y Coordi: " + e.getY();
                     ellipse2D = new Ellipse2D.Float(
                             x2, y2,
                             (float)rad,(float)rad);
                     g2.draw(ellipse2D);
+
+                    g2.setColor(Color.BLACK);
+                    g2.drawString(string2, x2 - rad, y2 -rad/2);
 
                     count++;
                     break;
