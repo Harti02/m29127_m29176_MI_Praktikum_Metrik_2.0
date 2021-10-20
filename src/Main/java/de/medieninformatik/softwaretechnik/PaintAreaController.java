@@ -83,8 +83,9 @@ public class PaintAreaController implements MouseListener {
                     g2.setColor(Color.BLACK);
                     g2.drawString(string2, x2 - rad, y2 -rad/2);
 
-                    String stringDistance = "Distance: " + (int) Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) + "px";      // Pythagoras' Theorem
-                    g2.drawString(stringDistance, 800, 600);
+                    g2.setColor(Color.BLUE);
+                    g2.setStroke(new BasicStroke(3));
+                    g2.drawLine(x1+rad/2, y1+rad/2, x2+rad/2, y2+rad/2);
 
                     count++;
                     break;
