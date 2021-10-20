@@ -22,7 +22,7 @@ public class MainFrame extends Frame {
      * Constructor of the MainFrame-class
      */
     public MainFrame()  {
-        setTitle("MainFrame V 1.2.1");
+        setTitle("MainFrame V 1.3");
         setSize(1000,800);
         setVisible(true);
         addWindowListener(mfc);
